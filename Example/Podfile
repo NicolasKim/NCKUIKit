@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'NCKUIKit_Example' do
+  pod 'NCKUIKit', :path => '../'
+
+  target 'NCKUIKit_Tests' do
+    inherit! :search_paths
+
+    pod 'FBSnapshotTestCase'
+  end
+end
