@@ -1,42 +1,27 @@
-#
-# Be sure to run `pod lib lint NCKUIKit.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
+Pod::Spec.new do |spec|
+  spec.name             = 'NCKUIKit'
+  spec.version          = '1.0'
+  spec.summary          = 'A short description of NCKUIKit.'
 
-Pod::Spec.new do |s|
-  s.name             = 'NCKUIKit'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of NCKUIKit.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  spec.description      = <<-DESC
+                       Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/<GITHUB_USERNAME>/NCKUIKit'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'NicolasKim' => 'jinqiucheng1006@live.cn' }
-  s.source           = { :git => 'https://github.com/<GITHUB_USERNAME>/NCKUIKit.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
-  s.ios.deployment_target = '8.0'
-
-  s.source_files = 'NCKUIKit/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'NCKUIKit' => ['NCKUIKit/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  spec.homepage         = 'https://github.com/NicolasKim/NCKUIKit'
+  spec.license          = { :type => 'MIT', :file => 'LICENSE' }
+  spec.author           = { 'NicolasKim' => 'jinqiucheng1006@live.cn' }
+  spec.source           = { :git => 'https://github.com/NicolasKim/NCKUIKit.git', :tag => spec.version.to_s }
+  spec.ios.deployment_target = '8.0'
+  spec.source_files = 'NCKUIKit/Classes/*.{h,m,mm}'
+  spec.dependency 'SDWebImage', '~> 3.8.2'
+  spec.vendored_frameworks = ['NCKUIKit/Classes/BaiduMap_IOSSDK_v3.0.0_Lib/BaiduMapAPI_Base.framework',
+                              'NCKUIKit/Classes/BaiduMap_IOSSDK_v3.0.0_Lib/BaiduMapAPI_Location.framework',
+                              'NCKUIKit/Classes/BaiduMap_IOSSDK_v3.0.0_Lib/BaiduMapAPI_Map.framework',
+                              'NCKUIKit/Classes/BaiduMap_IOSSDK_v3.0.0_Lib/BaiduMapAPI_Search.framework',
+                              'NCKUIKit/Classes/BaiduMap_IOSSDK_v3.0.0_Lib/BaiduMapAPI_Utils.framework']
+  spec.resource_bundles = {'Resources' => 'NCKUIKit/Classes/BaiduMap_IOSSDK_v3.0.0_Lib/BaiduMapAPI_Map.framework/Resources/mapapi.bundle'}
+  spec.frameworks = 'CoreLocation','QuartzCore','OpenGLES','SystemConfiguration','CoreGraphics','Security','CoreTelephony'
+  spec.libraries = 'sqlite3.0', 'stdc++.6.0.9'
+#spec.user_target_xcconfig =   {'OTHER_LDFLAGS' => ['-lObjC','-all_load']}
+  spec.dependency 'NCKFoundation'
 end

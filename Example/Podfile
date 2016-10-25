@@ -1,11 +1,9 @@
-use_frameworks!
+
+source 'https://github.com/NicolasKim/NCKSpecs.git'
+source 'https://github.com/CocoaPods/Specs.git'
+
 
 target 'NCKUIKit_Example' do
   pod 'NCKUIKit', :path => '../'
 
-  target 'NCKUIKit_Tests' do
-    inherit! :search_paths
-
-    pod 'FBSnapshotTestCase'
-  end
 end
